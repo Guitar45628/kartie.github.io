@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Cost Estimation Program</title>
+  </head>
+  <body>
+    <h1>Welcome to the Cost Estimation Program</h1>
+    <form id="costForm">
+      <p>How many days do you need the job completed?</p>
+      <input type="text" id="days">
+      <p>Choose the language:</p>
+      <select id="language">
+        <option value="python">Python</option>
+        <option value="c">C or C++</option>
+      </select>
+      <p>Choose the type of program:</p>
+      <select id="type">
+        <option value="commandline">Commandline</option>
+        <option value="gui">GUI</option>
+      </select>
+      <p>Do you need a report?</p>
+      <input type="radio" id="yes" name="report" value="yes">Yes
+      <input type="radio" id="no" name="report" value="no">No
+      <br><br>
+      <button type="button" onclick="calculateCost()">Calculate Cost</button>
+    </form>
+    <p id="cost"></p>
+  </body>
+  <script>
+    function calculateCost() {
+      var cost = 0;
+      var days = parseInt(document.getElementById("days").value);
+      if (days === 1) {
+        cost += 500;
+      } else if (days === 2) {
+        cost += 400;
+      } else if (days === 3) {
+        cost += 300;
+      } else if (days >= 4 && days <= 5) {
+        cost += 250;
+      } else if (days >= 6 && days <= 7) {
+        cost += 200;
+      } else {
+        cost += 150;
+      }
+      var language = document.getElementById("language").value;
+      if (language === "python") {
+        cost += 250;
+      } else if (language === "c") {
+        cost += 300;
+      }
+      var type = document.getElementById("type").value;
+      if (type === "commandline") {
+        cost += 99;
+      } else if (type === "gui") {
+        cost += 259;
+      }
+      var report = document.querySelector('input[name="report"]:checked').value;
+      if (report === "yes") {
+        cost += 100;
+      }
+      document.getElementById("cost").innerHTML = "The estimated cost is " + cost + " Baht";
+    }
+  </script>
+</html>
