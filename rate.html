@@ -1,27 +1,27 @@
 <html>
   <head>
-    <title>Cost Estimation Program</title>
+    <title>คำนวณค่าใช้จ่ายในการเขียนจ้างเขียนโปรแกรม</title>
   </head>
   <body>
-    <h1>Welcome to the Cost Estimation Program</h1>
+    <h1>ยินดีต้อนรับสู่การคำนวณค่าใช้จ่ายในการเขียนโปรแกรม</h1>
     <form id="costForm">
-      <p>How many days do you need the job completed?</p>
+      <p>ระยะเวลาที่ต้องการงาน เช่น ภายใน 3 วัน</p>
       <input type="text" id="days">
-      <p>Choose the language:</p>
+      <p>เลือกภาษาที่ต้องการ</p>
       <select id="language">
         <option value="python">Python</option>
-        <option value="c">C or C++</option>
+        <option value="c">C</option>
       </select>
-      <p>Choose the type of program:</p>
+      <p>เลือกประเภทของโปรแกรม</p>
       <select id="type">
         <option value="commandline">Commandline</option>
         <option value="gui">GUI</option>
       </select>
-      <p>Do you need a report?</p>
+      <p>ต้องการทำรายงานด้วยหรือไม่</p>
       <input type="radio" id="yes" name="report" value="yes">Yes
       <input type="radio" id="no" name="report" value="no">No
       <br><br>
-      <button type="button" onclick="calculateCost()">Calculate Cost</button>
+      <button type="button" onclick="calculateCost()">คำนวณ</button>
     </form>
     <p id="cost"></p>
   </body>
@@ -58,7 +58,7 @@
       if (report === "yes") {
         cost += 100;
       }
-      document.getElementById("cost").innerHTML = "The estimated cost is " + cost + " Baht";
+      document.getElementById("cost").innerHTML = "ค่าใช้จ่ายโดยประมาณคือ " + cost + " บาท";
     }
   </script>
 </html>
